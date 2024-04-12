@@ -27,6 +27,6 @@ fun flowerList() : List<Flower> {
             name = "freesia",
             image = R.drawable.freesia,
             description = "This is freesia"
-        ),
+        )
     )
 }

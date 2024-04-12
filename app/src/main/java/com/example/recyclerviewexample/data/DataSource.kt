@@ -21,4 +21,15 @@ class DataSource {
         return flowerList()
     }
 
+
+
+    // 1) 그냥 intent를 사용하는 방법
+    // id값을 매칭
+    fun getFlowerForId(id : Long) : Flower{
+        flowerList().let{
+            return it.first{it.id == id}
+        }
+    }
+
+
 }
