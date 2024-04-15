@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private val flowersAdapter : FlowersAdapter by lazy {
-        FlowersAdapter{flower ->
+        FlowersAdapter(flowerList()){ flower ->
             // 클릭 이벤트
             // 클릭했을때 FlowerDetailActivity로 이동하게끔
             adpaterOnClick(flower)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     // 클릭했을때 FlowerDetailActivity로 이동하게끔하는 함수 [ 1) 그냥 intent를 사용해서 넘기는 방법 ]
 //    private fun adpaterOnClick(flower: Flower) {
 //        val intent = Intent(this, FlowerDetailActivity()::class.java)
-          // FlowerDetailActivity로 데이터 전달
+//           //FlowerDetailActivity로 데이터 전달
 //        intent.putExtra(FlowerDetailActivity.EXTRA_FLOWER , flower.id)      // 키값:EXTRA_FLOWER, value값:flower.id      //intent.putExtra("FLOWER_ID", flower.id) 이런식으로도 사용가능
 //        startActivity(intent)
 //    }

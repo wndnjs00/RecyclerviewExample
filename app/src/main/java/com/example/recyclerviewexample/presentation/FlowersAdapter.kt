@@ -8,9 +8,9 @@ import com.example.recyclerviewexample.data.Flower
 import com.example.recyclerviewexample.databinding.FlowerItemBinding
 
 // 클릭 이벤트(onClick)
-class FlowersAdapter(private val onClick : (Flower) -> Unit) : RecyclerView.Adapter<FlowersAdapter.FlowerViewHolder>() {
+class FlowersAdapter(var flowerList : List<Flower>, private val onClick : (Flower) -> Unit) : RecyclerView.Adapter<FlowersAdapter.FlowerViewHolder>() {
 
-    var flowerList = listOf<Flower>()
+//    var flowerList = listOf<Flower>()
 
 
     // 화면(레이아웃) 연결 (여기서 멀티뷰타입 설정가능)
