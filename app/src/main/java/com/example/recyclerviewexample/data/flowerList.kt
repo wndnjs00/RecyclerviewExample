@@ -2,8 +2,8 @@ package com.example.recyclerviewexample.data
 
 import com.example.recyclerviewexample.R
 
-fun flowerList() : List<Flower> {
-    return listOf(
+fun flowerList() : ArrayList<Flower> {
+    return arrayListOf(
         Flower(
             id = 1,
             name = "daffodil",

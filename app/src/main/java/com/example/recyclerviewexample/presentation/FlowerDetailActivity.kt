@@ -1,6 +1,7 @@
 package com.example.recyclerviewexample.presentation
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recyclerviewexample.data.DataSource
 import com.example.recyclerviewexample.data.flowerList
@@ -21,6 +22,12 @@ class FlowerDetailActivity : AppCompatActivity() {
         const val EXTRA_FLOWER : String = "extra_flower"
     }
 
+    // ViewModel 선언 (뷰모델에 있는값 받아올수있도록)
+    private val flowerViewModel by viewModels<FlowerViewModel>{
+        FlowerViewModelFactory()
+    }
+
+
     // 2) 확장함수로 넘긴 데이터를 받아오는 방법 -> key값 받아오기
     //  key값의 타입은 Long타입이고, EXTRA_FLOWER 이 키값을 받아온다
     private val flower by extraNotNull<Long>(EXTRA_FLOWER)
@@ -32,22 +39,26 @@ class FlowerDetailActivity : AppCompatActivity() {
 
         // 1) intent를 사용해서 넘긴부분을 받는방법
         // 공유해서 쓰기로한 EXTRA_FLOWER 키값을 받아옴
-//        val flowerId = intent.extras?.getLong(EXTRA_FLOWER) ?: 0
+        val flowerId = intent.extras?.getLong(EXTRA_FLOWER) ?: 0
+
+
 //        val flowerData = DataSource.getDataSoures().getFlowerForId(flowerId)
-//
-//        // 값을 가져와서 레이아웃에 뿌려주면 끝!
-//        binding.flowerDetailName.text = flowerData.name
-//        binding.flowerDetailImage.setImageResource(flowerData.image)
-//        binding.flowerDetailDescription.text = flowerData.description
-
-
-        // 2) 확장함수로 넘긴 데이터를 받아오는 방법
-        val flowerData = DataSource().getFlowerForId(flower)
+        // 위와같이 DataSource로 받아왔던 데이터를 viewModel을 통해 받아오도록 수정
+        val flowerData = flowerViewModel.getFlowerForId(flowerId)
 
         // 값을 가져와서 레이아웃에 뿌려주면 끝!
         binding.flowerDetailName.text = flowerData.name
         binding.flowerDetailImage.setImageResource(flowerData.image)
         binding.flowerDetailDescription.text = flowerData.description
+
+
+        // 2) 확장함수로 넘긴 데이터를 받아오는 방법
+//        val flowerData = DataSource().getFlowerForId(flower)
+//
+//        // 값을 가져와서 레이아웃에 뿌려주면 끝!
+//        binding.flowerDetailName.text = flowerData.name
+//        binding.flowerDetailImage.setImageResource(flowerData.image)
+//        binding.flowerDetailDescription.text = flowerData.description
 
 
     }
