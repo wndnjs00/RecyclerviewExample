@@ -4,5 +4,5 @@
 2. 싱글톤 사용해서 구현
 3. bundle 사용해서 데이터전달, 확장함수를 사용해서 데이터 전달</br></br>
 ---
-4. 구현한것을 MVVM패턴을 사용해서 수정 (observer pattern 사용)
+4. 구현한것을 MVVM패턴을 사용해서 수정 (observer pattern 사용)</br>
    -> LiveData는 아직 사용안함
