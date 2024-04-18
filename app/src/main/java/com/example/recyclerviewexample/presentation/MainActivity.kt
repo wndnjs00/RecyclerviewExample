@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
 
             // 위에 dataSource로 받아왔던 코드를 ViewModel을 사용해서 변경
             // flowerViewModel에 있는 flowerData를 가져와서, 어뎁터와 연결
-            val flowerLists = flowerViewModel.flowerData
-            flowersAdapter.flowerList = flowerLists
+            val flowerLists = flowerViewModel.flowerData    // viewModel값 가져오기
+            flowersAdapter.flowerList = flowerLists                     // 가져온 viewModel값 어뎁터와 연결
 
 
             // 리사이클러뷰 레이아웃과 연결

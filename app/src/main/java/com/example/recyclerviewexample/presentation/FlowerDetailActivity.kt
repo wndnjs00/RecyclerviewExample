@@ -40,8 +40,9 @@ class FlowerDetailActivity : AppCompatActivity() {
         // 1) intent를 사용해서 넘긴부분을 받는방법
         // 공유해서 쓰기로한 EXTRA_FLOWER 키값을 받아옴
         val flowerId = intent.extras?.getLong(EXTRA_FLOWER) ?: 0
-//        val flowerData = DataSource.getDataSoures().getFlowerForId(flowerId)
 
+
+//        val flowerData = DataSource.getDataSoures().getFlowerForId(flowerId)
         // 위와같이 DataSource로 받아왔던 데이터를 viewModel을 통해 받아오도록 수정
         val flowerData = flowerViewModel.getFlowerForId(flowerId)
 
