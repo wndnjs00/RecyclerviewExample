@@ -46,7 +46,6 @@ class FlowersAdapter(var flowerList : List<Flower>, private val onClick : (Flowe
             }
         }
 
-
         // 레이아웃과 데이터 연결
         fun bind(flower: Flower){
             currentFlower = flower

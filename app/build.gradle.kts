@@ -51,4 +51,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // viewModel 추가!!
+    implementation("androidx.activity:activity-ktx:1.8.2")
 }
